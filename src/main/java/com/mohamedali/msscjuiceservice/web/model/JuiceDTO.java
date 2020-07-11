@@ -1,6 +1,7 @@
 package com.mohamedali.msscjuiceservice.web.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import java.util.UUID;
  * Created by mohamed ali on 2020-1-20
  */
 
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
