@@ -1,11 +1,23 @@
 package com.mohamedali.msscjuiceservice.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.Builder;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Version;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -34,6 +46,7 @@ public class Juice {
     @UpdateTimestamp
     private Timestamp modifiedDate;
 
+    @NotNull
     private String juiceName;
     private String juiceStyle;
 
@@ -41,6 +54,7 @@ public class Juice {
     private Long upc;
     private BigDecimal price;
 
+    @Positive
     private Integer minOnHand;
     private Integer quanityToCreate;
 }
