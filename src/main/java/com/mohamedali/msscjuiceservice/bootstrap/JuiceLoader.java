@@ -1,10 +1,9 @@
 package com.mohamedali.msscjuiceservice.bootstrap;
 
-import com.mohamedali.msscjuiceservice.domain.Juice;
+import com.mohamedali.msscjuiceservice.domain.JuiceEntity;
 import com.mohamedali.msscjuiceservice.repositories.JuiceRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.w3c.dom.ls.LSOutput;
 
 import java.math.BigDecimal;
 
@@ -28,19 +27,19 @@ public class JuiceLoader implements CommandLineRunner {
     private void loadJuiceObjects() {
         if(juiceRepository.count() == 0){
             juiceRepository
-                    .save(Juice.builder()
+                    .save(JuiceEntity.builder()
             .juiceName("Orange Juice")
             .juiceStyle("Orange Company")
-                            .upc(1234L)
+                            .upc("1234")
                             .price(BigDecimal.valueOf(222.34))
                             .minOnHand(40)
                             .build());
 
             juiceRepository
-                    .save(Juice.builder()
+                    .save(JuiceEntity.builder()
                             .juiceName("Apple Juice")
                             .juiceStyle("Apple Company")
-                            .upc(1234567L)
+                            .upc("1234")
                             .price(BigDecimal.valueOf(100.00))
                             .minOnHand(100)
                             .build());
