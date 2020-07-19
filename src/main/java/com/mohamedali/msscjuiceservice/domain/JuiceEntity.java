@@ -28,7 +28,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Juice {
+public class JuiceEntity {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -44,14 +44,15 @@ public class Juice {
     private Timestamp createdDate;
 
     @UpdateTimestamp
-    private Timestamp modifiedDate;
+    private Timestamp lastModifiedDate;
 
     @NotNull
     private String juiceName;
     private String juiceStyle;
 
     @Column(unique = true)
-    private Long upc;
+    private String upc;
+
     private BigDecimal price;
 
     @Positive
