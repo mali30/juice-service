@@ -43,10 +43,10 @@ public class JuiceDTO {
     @Positive
     private Long upc;
 
-    private Integer quantityOnHand;
 
     @Positive
     @NotNull
     private Integer price;
 
+    private Integer quantityOnHand;
 }
